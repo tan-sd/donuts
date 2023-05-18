@@ -8,6 +8,7 @@ html, body {
 }
 
 #social {
+  font-family: 'Helvetica Neue';
   position: absolute;
   bottom: 0;
   right: 0;
@@ -20,8 +21,4 @@ html, body {
 a:link, a:visited {
   text-decoration: underline;
   color: white;
-}
-
-a:hover {
-  color: grey;
 }
