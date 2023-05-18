@@ -21,6 +21,17 @@ const canvas = document.querySelector('canvas.webgl');
 const scene = new THREE.Scene();
 
 /**
+ * Axes Helper
+ */
+const axesHelper = new THREE.AxesHelper();
+axesHelper.visible = false;
+scene.add(axesHelper);
+
+gui
+    .add(axesHelper, 'visible')
+    .name('Axes')
+
+/**
  * Textures
  */
 const textureLoader = new THREE.TextureLoader();
@@ -48,6 +59,10 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     const text = new THREE.Mesh(textGeometry, material);
     scene.add(text);
 
+    gui
+        .add(text, 'visible')
+        .name('Text')
+
     console.time("donuts");
 
     const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45);
@@ -55,9 +70,9 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
     for(let i = 0; i < 1000; i++) {
         const donut = new THREE.Mesh(donutGeometry, material);
 
-        donut.position.x = (Math.random() - 0.5) * 10;
-        donut.position.y = (Math.random() - 0.5) * 10;
-        donut.position.z = (Math.random() - 0.5) * 10;
+        donut.position.x = (Math.random() - 0.5) * 20;
+        donut.position.y = (Math.random() - 0.5) * 20;
+        donut.position.z = (Math.random() - 0.5) * 20;
 
         donut.rotation.x = Math.random() * Math.PI;
         donut.rotation.y = Math.random() * Math.PI;
@@ -106,6 +121,10 @@ scene.add(camera);
  */
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
+
+gui
+    .add(controls, 'enableDamping')
+    .name('Damping')
 
 /**
  * Renderer
