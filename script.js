@@ -46,12 +46,12 @@ fontLoader.load("/fonts/helvetiker_regular.typeface.json", (font) => {
         font: font,
         size: 0.5,
         height: 0.2,
-        curveSegments: 5,
+        curveSegments: 36,
         bevelEnabled: true,
         bevelThickness: 0.03,
         bevelSize: 0.02,
         bevelOffset: 0,
-        bevelSegments: 4,
+        bevelSegments: 20,
     });
     textGeometry.center();
 
