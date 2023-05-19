@@ -7,8 +7,13 @@ html, body {
   overflow: hidden;
 }
 
+@font-face {
+  font-family: helve-neue;
+  src: url("./fonts/helvetica-neue.otf");
+}
+
 #social {
-  font-family: 'Helvetica Neue';
+  font-family: helve-neue;
   position: absolute;
   bottom: 0;
   right: 0;
